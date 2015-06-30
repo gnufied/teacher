@@ -20,19 +20,25 @@ EM.run {
     ws.onmessage do |msg|
       case msg
       when "student"
+        puts "Student is connected now"
         student = ws
       when "teacher"
         puts "Teacher is connected now"
         teacher = ws
-      when "correct"
+      when "1"
         puts "Received correct"
         if student
-          student.send("correct")
+          student.send("1")
         end
-      when "wrong"
+      when "2"
         puts "received wrong"
         if student
-          student.send("wrong")
+          student.send("2")
+        end
+      when "3"
+        puts "play response"
+        if student
+          student.send("3")
         end
       else
         puts "Unhandled message"
