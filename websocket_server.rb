@@ -22,12 +22,15 @@ EM.run {
       when "student"
         student = ws
       when "teacher"
+        puts "Teacher is connected now"
         teacher = ws
       when "correct"
+        puts "Received correct"
         if student
           student.send("correct")
         end
       when "wrong"
+        puts "received wrong"
         if student
           student.send("wrong")
         end
